@@ -1,0 +1,68 @@
+#Instructions:
+#Any text on a line after a "#" will be ignored (i.e. commented out)
+#For manually entered parameters the user types, with no spaces and omitting quotations, "Tree_Name(Data Type)=Value:Method Idx;" 
+#For automatically entered parameters the user types, with no spaces and omitting quotations, "Tree_Name(Data Type)=Comma_Separated_List_of_Search_Identifiers:Method Idx;"
+#Values for Method Idx can be found in "TRunParameters.h"
+#Please note the ";" that ends each parameter entry
+#
+#For an automatically searchable parameter that is a substring of another parameter (e.g. VFAT_ISHAPER is a subset of VFAT_ISHAPERFEED) the longer string should appear first
+#Failure to follow this ordering will cause unexpected behavior and may lead to crashes as the program may try a string to int/float conversion on non-numeric characters. 
+#This ordering scheme should also be applied to the {Comma_Separated_List_of_Search_Identifiers} set, e.g. "Muons" should appear before "Muon"
+#
+#Place detector information under the [DET] heading; these values do NOT change run-by-run
+#For automatic parameter search place under the [AUTO] header; these values may change run-by-run
+#For manual parameter entry place under the [MAN] header; these values may change run-by-run
+#Supported data types are {bool, int, float, string}
+#Search of this file ends at [END]
+#Do NOT comment out section headers
+#It is not recommended to add blank lines in between sections or after parameter input
+#
+#If you observe a crash, and the stack trace includes "std::stoi," "std::stof," or "treeProducerTDC::setMappedParam( ... )" it is possible one of your search identifiers 
+#below is matching to non-numeric elements of the parsed file name (PFN).  e.g. for a VFAT_THRESH identifier "T" this will match with a PFN element "Lat" since "Lat" will 
+#be converted to upper case "LAT".  In this case please consider adding the offending parameter ("Lat") to the ignored parameter listing 
+#via the treeProducerTDC::setIgnoredParameter() method.  Additional errors could be an improper "DET_POS" value, e.g. the 3rd position is value 2 not 3.
+#
+#
+# the [DET] section MUST have a parameter, omitting quotes, of the form "DET_POS(int)=X:101;" where X is some integer and follows array index convention (i.e. 1st entry X = 0) 
+# 
+#
+# the [MAN] section MUST have a parameter, omitting quotes, of the form "TDC_CH_NUMBER(int)=Y:301;" where Y is some integer (follows above index convention)
+#
+#
+#---------------------------------------------------------------
+[DET]
+DET_POS(int)=0:101;
+DET_NAME(string)=GE1/1-IV:106;
+TDC_CH_NUMBER(int)=10:301;
+#---------------------------------------------------------------
+[AUTO]
+Run(int)=TDCRun:1;
+Beam(string)=Muons,Muon,Pions,Pion,Electrons,Electron,El:2;
+TRIG_MODE(string)=Async,Sync:3;
+TRIG_DELAY(float)=DLYns:4;
+DET_IMON(float)=uA:104;
+VFAT_IPREAMPIN(int)=IPreampIn:204;
+VFAT_IPREAMPFEED(int)=IPreampFeed:205;
+VFAT_IPREAMPOUT(int)=IPreampOut:206;
+VFAT_ISHAPERFEED(int)=IShaperFeed:208;
+VFAT_ISHAPER(int)=IShaper:207;
+VFAT_IComp(int)=IComp:209;
+VFAT_MSPL(int)=MSPL:210;
+VFAT_THRESH(int)=T:212;
+#---------------------------------------------------------------
+[MAN]
+TURBO_ID(int)=2:201;
+VFAT_POS(int)=0:202;
+#VFAT_ID(string)=ABC0:203;
+DET_ETA(int)=5:102; 
+DET_PHI(int)=1:103;
+DET_GASFRAC_AR(float)=45:107;
+DET_GASFRAC_CO2(float)=15:108;
+DET_GASFRAC_CF4(float)=40:109;
+DET_GAIN_CONST(float)=-1.36048e+01:110;
+DET_GAIN_CONST_ERR(float)=1.15553e-01:111;
+DET_GAIN_SLOPE(float)=2.89649e-02:112;
+DET_GAIN_SLOPE_ERR(float)=1.73463e-04:113;
+DET_GAIN_INDEPVAR_CURRENT(bool)=true:114;
+#---------------------------------------------------------------
+[END]

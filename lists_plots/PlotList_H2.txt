@@ -1,0 +1,2142 @@
+[BEGIN_SELECTION]
+	identifier = 'ScanComp_Async_GE11_IV';
+	selection = 'fTDC_Histo_RMS > 0';
+	clone_prev = 'false';
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_RMS_GE11_IV';
+		title='Async Scan Comparison GE11_IV';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-IV';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IV_R10_R21_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_R76_R80_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_R184_R200_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_ContConvo_GE11_IV';
+		title='Async Scan Comparison GE11_IV';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-IV';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IV_R10_R21_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_R76_R80_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_R184_R200_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_Gaus_GE11_IV';
+		title='Async Scan Comparison GE11_IV';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-IV';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IV_R10_R21_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian Sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_R76_R80_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_R184_R200_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_Numeric_GE11_IV';
+		title='Async Scan Comparison GE11_IV';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-IV';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IV_R10_R21_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Numeric Deconvo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_R76_R80_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Numeric Deconvo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_R184_R200_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Numeric Deconvo #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+[END_SELECTION]
+[BEGIN_SELECTION]
+	identifier = 'ScanComp_Async_GE11_IV_GIF';
+	selection = 'fTDC_Histo_RMS > 0';
+	clone_prev = 'false';
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_RMS_GE11_IV_GIF';
+		title='Async Scan Comparison GE11_IV_GIF';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-IV-GIF';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R10_R21_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R76_R80_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R184_R200_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_ContConvo_GE11_IV_GIF';
+		title='Async Scan Comparison GE11_IV_GIF';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-IV-GIF';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R10_R21_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R76_R80_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R184_R200_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_Gaus_GE11_IV_GIF';
+		title='Async Scan Comparison GE11_IV_GIF';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-IV-GIF';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R10_R21_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian Sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R76_R80_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R184_R200_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_Numeric_GE11_IV_GIF';
+		title='Async Scan Comparison GE11_IV_GIF';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-IV-GIF';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R10_R21_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Numeric Deconvo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R76_R80_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Numeric Deconvo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_R184_R200_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Numeric Deconvo #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+[END_SELECTION]
+[BEGIN_SELECTION]
+	identifier = 'ScanComp_Async_GE11_V';
+	selection = 'fTDC_Histo_RMS > 0';
+	clone_prev = 'false';
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_RMS_GE11_V';
+		title='Async Scan Comparison GE11_V';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-V';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11V_R10_R21_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_R76_R80_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_R184_R200_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_ContConvo_GE11_V';
+		title='Async Scan Comparison GE11_V';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-V';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11V_R10_R21_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_R76_R80_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_R184_R200_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_Gaus_GE11_V';
+		title='Async Scan Comparison GE11_V';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-V';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11V_R10_R21_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian Sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_R76_R80_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_R184_R200_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='ScanComp_Async_Numeric_GE11_V';
+		title='Async Scan Comparison GE11_V';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-V';
+		#latex_line='GLOBAL_SELECTION';
+		#latex_line_ndcpos_x='0.53';		
+		#latex_line_ndcpos_x='0.78';
+		latex_line_ndcpos_x='0.72';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11V_R10_R21_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='10 <= iRun && iRun <= 21';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Numeric Deconvo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[10,21#right]; Default';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_R76_R80_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='76 <= iRun && iRun <= 80';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Numeric Deconvo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+2';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'iRun #in #left[76,80#right]; IComp = 120';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_R184_R200_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='184 <= iRun && iRun <= 200';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Numeric Deconvo #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+3';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'iRun #in #left[184,200#right]; T = 1.2 fC';
+		[END_PLOT]
+	[END_CANVAS]
+[END_SELECTION]
+[BEGIN_SELECTION]
+	identifier = 'R10_R21';
+	selection = '10 <= iRun && iRun <= 21';
+	clone_prev = 'false';
+	[BEGIN_CANVAS]
+		name='timeResp_IV';
+		title='timeResp iRun epsilon [10,21]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		#latex_line='10 #leq iRun && iRun #leq 21';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IV_ContConvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='fTDC_Fit_ContConvo_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep='fDet_VDrift';			
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			var_dep_assoc='func_TDC_Convo';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Cont. Convo.';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='fTDC_Fit_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			var_dep_assoc='func_TDC_Gaus';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='22';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Gaussian Fit';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='fTDC_NumDeconvo_TimeResp > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlue';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Numeric Deconvo.';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='fTDC_Histo_RMS > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlack';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'RMS_{Histogram}';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='timeResp_IVGIF';
+		title='timeResp iRun epsilon [10,21]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		#latex_line='10 #leq iRun && iRun #leq 21';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_ContConvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='fTDC_Fit_ContConvo_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep='fDet_VDrift';			
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			var_dep_assoc='func_TDC_Convo';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Cont. Convo.';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='fTDC_Fit_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			var_dep_assoc='func_TDC_Gaus';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='22';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Gaussian Fit';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='fTDC_NumDeconvo_TimeResp > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlue';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Numeric Deconvo.';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='fTDC_Histo_RMS > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlack';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'RMS_{Histogram}';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='timeResp_V';
+		title='timeResp iRun epsilon [10,21]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		#latex_line='10 #leq iRun && iRun #leq 21';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11V_ContConvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='fTDC_Fit_ContConvo_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep='fDet_VDrift';			
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			var_dep_assoc='func_TDC_Convo';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Cont. Convo.';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='fTDC_Fit_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			var_dep_assoc='func_TDC_Gaus';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='22';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Gaussian Fit';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_NumDeconvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='fTDC_NumDeconvo_TimeResp > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_NumDeconvo_TimeResp';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlue';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Numeric Deconvo.';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='fTDC_Histo_RMS > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlack';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'RMS_{Histogram}';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='timeResp_Comp_RMS';
+		title='timeResp iRun epsilon [10,21]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		#latex_line='10 #leq iRun && iRun #leq 21';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='fTDC_Histo_RMS > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'GE1/1-IV-GIF';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='fTDC_Histo_RMS > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kGreen+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'GE1/1-IV';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_HistoRMS_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='fTDC_Histo_RMS > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_RMS';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Histo RMS #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlue+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'GE1/1-V';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='timeResp_Comp_ContConvo';
+		title='timeResp iRun epsilon [10,21]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		#latex_line='10 #leq iRun && iRun #leq 21';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_ContConvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='fTDC_Fit_ContConvo_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'GE1/1-IV-GIF';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_ContConvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='fTDC_Fit_ContConvo_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kGreen+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'GE1/1-IV';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_ContConvoSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='fTDC_Fit_ContConvo_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Cont. Convo. #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlue+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'GE1/1-V';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='timeResp_Comp_Gaus';
+		title='timeResp iRun epsilon [10,21]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		#latex_line='10 #leq iRun && iRun #leq 21';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='fTDC_Fit_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			#option_draw='P';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'GE1/1-IV-GIF';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='fTDC_Fit_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kGreen+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'GE1/1-IV';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_GausSigma_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='fTDC_Fit_Sigma > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Sigma';
+			var_dep_err='fTDC_Fit_Sigma_Err';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='Gaussian #sigma #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlue+1';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = 'GE1/1-V';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='normChisquare_IV';
+		title='normChisquare iRun epsilon [10,21]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IV_FitNormChi2_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			#selection='';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Chi2 / fTDC_Fit_ContConvo_NDF';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#chi^{2} / NDF';
+			color='kRed';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Cont. Convo.';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IV_FitNormChi2_Gaus_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			#selection='';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Chi2 / fTDC_Fit_NDF';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#chi^{2} / NDF';
+			color='kRed+1';
+			style_line='1';
+			style_marker='22';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Gaussian';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='normChisquare_IVGIF';
+		title='normChisquare iRun epsilon [10,21]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_FitNormChi2_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			#selection='';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Chi2 / fTDC_Fit_ContConvo_NDF';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#chi^{2} / NDF';
+			color='kRed';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Cont. Convo.';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11IVGIF_FitNormChi2_Gaus_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			#selection='';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Chi2 / fTDC_Fit_NDF';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#chi^{2} / NDF';
+			color='kRed+1';
+			style_line='1';
+			style_marker='22';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Gaussian';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='normChisquare_V';
+		title='normChisquare iRun epsilon [10,21]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11V_FitNormChi2_ContConvo_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			#selection='';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Chi2 / fTDC_Fit_ContConvo_NDF';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#chi^{2} / NDF';
+			color='kRed';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Cont. Convo.';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='GE11V_FitNormChi2_Gaus_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			#selection='';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Fit_Chi2 / fTDC_Fit_NDF';
+			#var_dep_err='';
+			x_title='I_{mon} #left(#muA#right)';
+			y_title='#chi^{2} / NDF';
+			color='kRed+1';
+			style_line='1';
+			style_marker='22';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			#option_fit='R';
+			#fit_formula='[0]*x+[1]';
+			leg_entry = 'Gaussian';
+		[END_PLOT]
+	[END_CANVAS]
+[END_SELECTION]
+[BEGIN_SELECTION]
+	identifier='R76_R80_IComp120';
+	selection='76 <= iRun && iRun <= 80';
+	clone_prev='true';
+[END_SELECTION]
+[BEGIN_SELECTION]
+	identifier='R184_R200_Thresh1pt2fC';
+	selection='184 <= iRun && iRun <= 200';
+	clone_prev='true';
+[END_SELECTION]
+[BEGIN_SELECTION]
+	identifier='R23_R53';
+	selection='23 <= iRun && iRun <= 53';
+	clone_prev='false';
+	[BEGIN_CANVAS]
+		name='clockScan_IV';
+		title='Clock Scan iRun epsilon [23,43]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IV_ClockScan_v_AddedDly';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='(fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax ) > 0 && fTrig_Delay > 0 && fDet_Imon > 0';
+			var_indep='fTrig_Delay';
+			var_dep='fTDC_Histo_PkInt_1stMax / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )';
+			var_dep_err='sqrt( (fTDC_Histo_PkInt_1stMax / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )^2) + ( fTDC_Histo_PkInt_1stMax^2 ) / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )^3 )';
+			x_title='Added Delay #left(ns#right)';
+			y_title='BX Identification';
+			y_range_min='0';
+			y_range_max='1';
+			point_labels='iRun';
+			point_labels_angle='45';
+			point_labels_type='int';
+			color='kBlack';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			leg_entry = 'GE1/1-IV';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='clockScan_IVGIF';
+		title='Clock Scan iRun epsilon [23,43]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_ClockScan_v_AddedDly';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='(fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax ) > 0 && fTrig_Delay > 0 && fDet_Imon > 0';
+			var_indep='fTrig_Delay';
+			var_dep='fTDC_Histo_PkInt_1stMax / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )';
+			var_dep_err='sqrt( (fTDC_Histo_PkInt_1stMax / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )^2) + ( fTDC_Histo_PkInt_1stMax^2 ) / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )^3 )';
+			x_title='Added Delay #left(ns#right)';
+			y_title='BX Identification';
+			y_range_min='0';
+			y_range_max='1';
+			color='kBlack';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			leg_entry = 'GE1/1-IV-GIF';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='clockScan_V';
+		title='Clock Scan iRun epsilon [23,43]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11V_ClockScan_v_AddedDly';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='(fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax ) > 0 && fTrig_Delay > 0 && fDet_Imon > 0';
+			var_indep='fTrig_Delay';
+			#var_indep='iRun';
+			var_dep='fTDC_Histo_PkInt_1stMax / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )';
+			var_dep_err='sqrt( (fTDC_Histo_PkInt_1stMax / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )^2) + ( fTDC_Histo_PkInt_1stMax^2 ) / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )^3 )';
+			x_title='Added Delay #left(ns#right)';
+			y_title='BX Identification';
+			y_range_min='0';
+			y_range_max='1';
+			point_labels='iRun';
+			point_labels_angle='45';
+			point_labels_type='int';
+			color='kBlack';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			leg_entry = 'GE1/1-V';
+		[END_PLOT]
+	[END_CANVAS]
+[END_SELECTION]
+[BEGIN_SELECTION]
+	#identifier='R202_R228';
+	identifier='R204_R228';
+	#selection='202 <= iRun && iRun <=228';
+	#selection='(204 <= iRun && iRun <=221) || (270 <= iRun && iRun <= 273) || iRun == 226 || iRun == 227';
+	selection='(204 <= iRun && iRun <=221) || (271 <= iRun && iRun <= 273) || iRun == 227';
+	clone_prev='true';
+[END_SELECTION]
+[BEGIN_SELECTION]
+	identifier='R230_R254';
+	#selection='230 <= iRun && iRun <=254';
+	selection='230 <= iRun && iRun <=253 && iRun != 242';
+	clone_prev='true';
+[END_SELECTION]
+[BEGIN_SELECTION]
+	#identifier='R257_R273';
+	identifier='R257_R269';
+	#selection='257 <= iRun && iRun <=273';
+	selection='256 <= iRun && iRun <=269';
+	clone_prev='true';
+[END_SELECTION]
+[BEGIN_SELECTION]
+	identifier='R54_R70';
+	selection='54 <= iRun && iRun <= 70';
+	clone_prev='false';
+	[BEGIN_CANVAS]
+		name='bxIdent_IV';
+		title='BX Ident iRun epsilon [54,70]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IV_BXIdent_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV.root';
+			name_tree='GE11_IV';
+			selection='(fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax ) > 0 && fTrig_Delay > 0 && fDet_Imon > 0';
+			var_indep='fDet_Imon';
+			#var_indep_err='';
+			var_dep='fTDC_Histo_PkInt_1stMax / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )';
+			#var_dep_err='';
+			x_title='Added Delay #left(ns#right)';
+			y_title='BX Identification';
+			y_range_min='0';
+			y_range_max='1';
+			color='kBlack';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			leg_entry = 'GE1/1-IV';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='bxIdent_IVGIF';
+		title='BX Ident iRun epsilon [54,70]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11IVGIF_BXIdent_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_IV_GIF.root';
+			name_tree='GE11_IV_GIF';
+			selection='(fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax ) > 0 && fTrig_Delay > 0 && fDet_Imon > 0';
+			var_indep='fDet_Imon';
+			var_dep='fTDC_Histo_PkInt_1stMax / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )';
+			#var_dep_err='';
+			x_title='Added Delay #left(ns#right)';
+			y_title='BX Identification';
+			y_range_min='0';
+			y_range_max='1';
+			color='kBlack';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			leg_entry = 'GE1/1-IV-GIF';
+		[END_PLOT]
+	[END_CANVAS]
+	[BEGIN_CANVAS]
+		name='bxIdent_V';
+		title='BX Ident iRun epsilon [54,70]';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GLOBAL_SELECTION';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.86';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='GE11V_BXIdent_v_Imon';
+			name_root_file='TestBeamDataset_TDC_Fall2014_H2_GE11_V.root';
+			name_tree='GE11_V';
+			selection='(fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax ) > 0 && fTrig_Delay > 0 && fDet_Imon > 0';
+			var_indep='fDet_Imon';
+			var_dep='fTDC_Histo_PkInt_1stMax / (fTDC_Histo_PkInt_1stMax + fTDC_Histo_PkInt_2ndMax + fTDC_Histo_PkInt_3rdMax )';
+			#var_dep_err='';
+			x_title='Added Delay #left(ns#right)';
+			y_title='BX Identification';
+			y_range_min='0';
+			y_range_max='1';
+			color='kBlack';
+			style_line='1';
+			style_marker='25';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			leg_entry = 'GE1/1-V';
+		[END_PLOT]
+	[END_CANVAS]
+[END_SELECTION]
