@@ -42,13 +42,5 @@
 
 		./src/analyzeTree lists_plots/PlotList_GE11_IV_iMSPL_iT.txt
 
-	will generate an output file "PlotList_GE11_IV_iMSPL_iT.root" containing the prepared results.
+	will generate an output file "PlotList_GE11_IV_iMSPL_iT.root" containing the prepared results
 
-	Please see "lists_plots/PlotList_Template.txt" for an explanation of the expected input and available options
-
-# Usage - produceTree
-# ========================================================
-	
-	EXPERTS ONLY
-
-	Coming soon...
