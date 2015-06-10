@@ -1,6 +1,6 @@
 //
 //  treeAnalyzer.h
-//  
+//
 //
 //  Created by Brian L Dorney on 30/03/15.
 //
@@ -63,6 +63,12 @@ public:
         bool bXAxis_UserRange;  //Use Range Specified by User
         bool bYAxis_UserRange;  //Use Range Specified by User
         
+        //Double_t *dVarDepend;   //Pointer to a container of the Plot's dep. var. (strVarDepend)
+        //Double_t *dVarDependErr;//Pointer to a container of the Plot's dep. var. (strVarDependErr)
+        
+        //Double_t *dVarIndep;    //Pointer to a container of the Plot's indep. var. (strVarIndep)
+        //Double_t *dVarIndepErr; //Pointer to a container of the Plot's indep. var. (strVarIndep)
+        
         int iColor;             //Line and Marker Color
         
         int iStyleLine;         //Line Style
@@ -111,6 +117,12 @@ public:
         
         string strYAxis_Title;  //Y-Axis Title
         
+        std::vector<float> vec_fVarDepend;
+        std::vector<float> vec_fVarDependErr;
+        
+        std::vector<float> vec_fVarIndep;
+        std::vector<float> vec_fVarIndepErr;
+        
         //Specify default behavior
         PlotInfo(){
             bPointLabels        = false;
@@ -133,7 +145,7 @@ public:
         
         std::vector<float> vec_fLatexNDCPos_X;  //NDC X-Position of TLatex
         std::vector<float> vec_fLatexNDCPos_Y;  //NDC Y-Position of TLatex
-
+        
         string strDirectory;                    //Name of the TDirectory data is stored in (SelInfo.strDirectory -> this directory)
         
         string strName;                         //TName
@@ -190,7 +202,7 @@ public:
     //A set of plots is created for each master selection.  Each plot within this may have a local selection
     virtual void applySelection(string strInputTextFile);
     
-//private:
+    //private:
 protected:
     //Data Members=====================================
     bool bVerbose_IO;

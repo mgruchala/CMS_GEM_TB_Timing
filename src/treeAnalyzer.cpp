@@ -1,6 +1,6 @@
 //
 //  treeAnalyzer.cpp
-//  
+//
 //
 //  Created by Brian L Dorney on 30/03/15.
 //
@@ -190,10 +190,10 @@ void treeAnalyzer::applySelection(string strOutputROOTFile){
     
     if (!bExitSuccess) { //Case: Output File Was Not Created Successfully
         if(bVerbose_IO) {
-        cout<< ("treeAnalyzer::applySelection() - Output ROOT File: " + strOutputROOTFile + " was not successfully created, stopping\n").c_str();
-        cout<<"treeAnalyzer::applySelection() - Please Cross-Check (Maybe you do not have write-permission in working directory or filepath does not exist???)"<<endl;
+            cout<< ("treeAnalyzer::applySelection() - Output ROOT File: " + strOutputROOTFile + " was not successfully created, stopping\n").c_str();
+            cout<<"treeAnalyzer::applySelection() - Please Cross-Check (Maybe you do not have write-permission in working directory or filepath does not exist???)"<<endl;
         }
-            
+        
         return;
     } //End Case: Output File Was Not Created Successfully
     
@@ -283,7 +283,7 @@ void treeAnalyzer::applySelection(string strOutputROOTFile){
                 if (treeInput == nullptr) { //Case: Tree Not Found
                     std::cout<<("treeAnalyzer::applySelection(): error while fetching tree: " + ((*iterPlot).second).strNameTree ).c_str() << endl;
                     std::cout << "Skipping Plot: " << ((*iterPlot).second).strName << endl;
-
+                    
                     continue;
                 } //End Case: Tree Not Found
                 
@@ -306,6 +306,22 @@ void treeAnalyzer::applySelection(string strOutputROOTFile){
                     
                     //Setup TGraphErrors & Draw the Tree simultaneously
                     gCurrentPlot = new TGraphErrors(treeInput->Draw(((*iterPlot).second).strExpress.c_str(),((*iterPlot).second).strSelLocal.c_str(), "goff" ), treeInput->GetV1(), treeInput->GetV2(), 0, treeInput->GetV3() );
+                    
+                    //Store the vectors created by the TTree::Draw() method
+                    //(*iterPlot).second.dVarIndep    = treeInput->GetV1();
+                    //(*iterPlot).second.dVarIndepErr = /* not yet supported */
+                    //(*iterPlot).second.dVarDepend   = treeInput->GetV2();
+                    //(*iterPlot).second.dVarDependErr= treeInput->GetV3();
+                    
+                    (*iterPlot).second.vec_fVarDepend.resize( gCurrentPlot->GetN() );
+                    (*iterPlot).second.vec_fVarDependErr.resize( gCurrentPlot->GetN() );
+                    (*iterPlot).second.vec_fVarIndep.resize( gCurrentPlot->GetN() );
+                    //(*iterPlot).second.vec_fVarIndepErr.resize( gCurrentPlot->GetN() ); //Not supported yet
+                    
+                    std::copy(treeInput->GetV2(), treeInput->GetV2() + gCurrentPlot->GetN(), (*iterPlot).second.vec_fVarDepend.begin() );
+                    std::copy(treeInput->GetV3(), treeInput->GetV3() + gCurrentPlot->GetN(), (*iterPlot).second.vec_fVarDependErr.begin() );
+                    std::copy(treeInput->GetV1(), treeInput->GetV1() + gCurrentPlot->GetN(), (*iterPlot).second.vec_fVarIndep.begin() );
+                    //std::copy( ??? , ??? , vec_fVarIndepErr() ); //Not supported yet
                 } //End Case: Y Errors are non-null
                 else{ //Case: No Error Bars
                     //Setup the Expression
@@ -313,6 +329,16 @@ void treeAnalyzer::applySelection(string strOutputROOTFile){
                     
                     //Setup TGraphErrors & Draw the Tree simultaneously
                     gCurrentPlot = new TGraphErrors(treeInput->Draw(((*iterPlot).second).strExpress.c_str(),((*iterPlot).second).strSelLocal.c_str(), "goff" ), treeInput->GetV1(), treeInput->GetV2(), 0, 0 );
+                    
+                    //Store the vectors created by the TTree::Draw() method
+                    //(*iterPlot).second.dVarIndep    = treeInput->GetV1();
+                    //(*iterPlot).second.dVarDepend   = treeInput->GetV2();
+                    
+                    (*iterPlot).second.vec_fVarDepend.resize( gCurrentPlot->GetN() );
+                    (*iterPlot).second.vec_fVarIndep.resize( gCurrentPlot->GetN() );
+                    
+                    std::copy(treeInput->GetV2(), treeInput->GetV2() + gCurrentPlot->GetN(), (*iterPlot).second.vec_fVarDepend.begin() );
+                    std::copy(treeInput->GetV1(), treeInput->GetV1() + gCurrentPlot->GetN(), (*iterPlot).second.vec_fVarIndep.begin() );
                     
                     //Other Option
                     //Seems to cause a seg fault; probably a problem with the gPad not being defined here?
@@ -326,13 +352,13 @@ void treeAnalyzer::applySelection(string strOutputROOTFile){
                 //cCurrentCanvas->cd();   //It should already be the active canvas but, hey just to be sure
                 
                 /*//Draw the current plot
-                if ( std::distance(((*iterCanvas).second).mapPlot.begin(), iterPlot) > 0 ) { //Case: All Subsequent Plots
-                    gCurrentPlot->Draw( ("same " + (*iterPlot).second.strOptionDraw).c_str() );
-                } //End Case: All Subsequent Plots
-                else { //Case: First Plot
-                    gCurrentPlot->Draw( (*iterPlot).second.strOptionDraw.c_str() );
-                } //End Case: First Plot
-                */
+                 if ( std::distance(((*iterCanvas).second).mapPlot.begin(), iterPlot) > 0 ) { //Case: All Subsequent Plots
+                 gCurrentPlot->Draw( ("same " + (*iterPlot).second.strOptionDraw).c_str() );
+                 } //End Case: All Subsequent Plots
+                 else { //Case: First Plot
+                 gCurrentPlot->Draw( (*iterPlot).second.strOptionDraw.c_str() );
+                 } //End Case: First Plot
+                 */
                 
                 //Store the Plot in a MultiGraph
                 if ( std::distance(((*iterCanvas).second).mapPlot.begin(), iterPlot) > 0 ) { //Case: All Subsequent Plots
@@ -349,21 +375,21 @@ void treeAnalyzer::applySelection(string strOutputROOTFile){
                     
                     //Draw all plot labels requested by the user onto this canvas
                     /*for (auto iterLabels = vec_PlotLabels.begin(); iterLabels != vec_PlotLabels.end(); ++iterLabels) { //Loop over vec_PlotLabels
-                        //Initialize the TLatex
-                        TLatex *thisLatex = new TLatex();
-                        
-                        //Set the TName to be unique
-                        thisLatex->SetName( ("thisLatex_" + (*iterPlot).second.strName ).c_str() );
-                        
-                        //Set the text size
-                        thisLatex->SetTextSize(0.03);
-                        
-                        //Set the text angle
-                        thisLatex->SetTextAngle( (*iterPlot).second.fPtLbls_Angle );
-                        
-                        //Draw
-                        thisLatex->DrawLatex( getOffsetPosition(std::get<0>(*iterLabels), (*iterPlot).second.fPtLbls_Angle, true ), getOffsetPosition(std::get<1>(*iterLabels), (*iterPlot).second.fPtLbls_Angle, false ),( std::get<2>(*iterLabels) ).c_str() );
-                    } //End Loop Over vec_PlotLabels */
+                     //Initialize the TLatex
+                     TLatex *thisLatex = new TLatex();
+                     
+                     //Set the TName to be unique
+                     thisLatex->SetName( ("thisLatex_" + (*iterPlot).second.strName ).c_str() );
+                     
+                     //Set the text size
+                     thisLatex->SetTextSize(0.03);
+                     
+                     //Set the text angle
+                     thisLatex->SetTextAngle( (*iterPlot).second.fPtLbls_Angle );
+                     
+                     //Draw
+                     thisLatex->DrawLatex( getOffsetPosition(std::get<0>(*iterLabels), (*iterPlot).second.fPtLbls_Angle, true ), getOffsetPosition(std::get<1>(*iterLabels), (*iterPlot).second.fPtLbls_Angle, false ),( std::get<2>(*iterLabels) ).c_str() );
+                     } //End Loop Over vec_PlotLabels */
                 } //End Case: Draw Plot Labels
                 
                 //Add to the Legend
@@ -441,10 +467,10 @@ void treeAnalyzer::applySelection(string strOutputROOTFile){
                         
                         //Draw
                         thisLatex->DrawLatex(
-                            getOffsetPosition(std::get<0>(*iterLabels), (*iterCanvas).second.mapPlot[(*iterPlotLabels).first].fPtLbls_Angle, true ),
-                            getOffsetPosition(std::get<1>(*iterLabels), (*iterCanvas).second.mapPlot[(*iterPlotLabels).first].fPtLbls_Angle, false ),
-                            ( std::get<2>(*iterLabels) ).c_str()
-                        );
+                                             getOffsetPosition(std::get<0>(*iterLabels), (*iterCanvas).second.mapPlot[(*iterPlotLabels).first].fPtLbls_Angle, true ),
+                                             getOffsetPosition(std::get<1>(*iterLabels), (*iterCanvas).second.mapPlot[(*iterPlotLabels).first].fPtLbls_Angle, false ),
+                                             ( std::get<2>(*iterLabels) ).c_str()
+                                             );
                     } //End Loop Over vector of labels for plot iterPlotLabels
                 } //End Loop Over map of "plots"
             } //End Case: Draw Plot Labels
@@ -590,8 +616,8 @@ std::vector<std::tuple<float,float,string> > treeAnalyzer::getSelOrderedPairs(Pl
     
     //Set the branch addresses
     //------------------------------------------------------
-    treeInput->SetBranchAddress(inputInfo.strVarDepend.c_str(), &fVarDep);
-    treeInput->SetBranchAddress(inputInfo.strVarIndep.c_str(),  &fVarIndep);
+    //treeInput->SetBranchAddress(inputInfo.strVarDepend.c_str(), &fVarDep);
+    //treeInput->SetBranchAddress(inputInfo.strVarIndep.c_str(),  &fVarIndep);
     
     if (inputInfo.strPtLbls_Type.compare("INT") == 0 ) { //Case: int
         treeInput->SetBranchAddress(inputInfo.strPtLbls_Brnch.c_str(), &labels.iInput);
@@ -617,9 +643,20 @@ std::vector<std::tuple<float,float,string> > treeAnalyzer::getSelOrderedPairs(Pl
     //Get the Entry List
     TEntryList *listSelEvts = (TEntryList*) gDirectory->Get("listSelEvts");
     
+    //Debugging
+    //cout<<"listSelEvts->GetN() = " << listSelEvts->GetN() << endl;
+    //cout<<"inputInfo.vec_fVarDepend.size() = " << inputInfo.vec_fVarDepend.size() << endl;
+    //cout<<"inputInfo.vec_fVarIndep.size() = " << inputInfo.vec_fVarIndep.size() << endl;
+    
     //Loop Over the events passing selection stored in listSelEvts
     for (int i=0; i < listSelEvts->GetN(); ++i) { //Loop Over listSelEvts
         treeInput->GetEntry( listSelEvts->GetEntry(i) );
+        
+        //fVarDep     = inputInfo.dVarDepend[i];
+        //fVarIndep   = inputInfo.dVarIndep[i];
+        
+        fVarDep     = inputInfo.vec_fVarDepend[i];
+        fVarIndep   = inputInfo.vec_fVarIndep[i];
         
         if (inputInfo.strPtLbls_Type.compare("INT") == 0 ) { //Case: int
             ret_vecOfLabels.push_back( std::make_tuple(fVarIndep, fVarDep, inputInfo.strPtLbls_Brnch + " = " + getString(labels.iInput) ) );
@@ -832,7 +869,7 @@ bool treeAnalyzer::convert2bool(string str, bool &bExitSuccess){
     
     //Input recognized?
     if ( !(str.compare("T")==0 || str.compare("TRUE")==0 || str.compare("1")==0
-        || str.compare("F")==0 || str.compare("FALSE")==0 || str.compare("0")==0) ) {
+           || str.compare("F")==0 || str.compare("FALSE")==0 || str.compare("0")==0) ) {
         bExitSuccess = false;
         return false;
     }
@@ -1165,6 +1202,6 @@ void treeAnalyzer::setParamSel(string strField, string strVal, SelInfo &inputInf
         cout<<("treeAnalyzer::setParamSel() - " + strField + " = " + strVal ).c_str() << endl;
         cout<<"treeAnalyzer::setParamSel() - Please cross-check input!!!\n";
     } //End Case: Unrecgonized Field
-        
+    
     return;
 } //End treeAnalyzer::setParamSel()

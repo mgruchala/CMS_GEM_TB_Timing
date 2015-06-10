@@ -7,6 +7,10 @@ CFLAGS = `root-config --cflags --glibs --libs` -std=c++11
 
 # Define any directories containing header files other than "/usr/include"
 INCLUDES = -I../include
+#INCLUDES = -I../include -I$(ROOTSYS)/include
+
+# Define any library paths in addition to "/usr/lib"
+LPATHS = -L $(ROOTSYS)/lib/
 
 # Define source files
 SOURCES = treeAnalyzer.cpp treeAnalyzerTDC.cpp analyzeTree.cpp
@@ -33,9 +37,12 @@ EXEC = analyzeTree
 
 all:	$(EXEC)
 	@echo	Compiling $(EXEC)
+	@echo	$(ROOTSYS)
+	@echo	which root-config
 
 $(EXEC): $(OBJECTS)
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(EXEC) $(OBJECTS)
+#	$(CC) $(CFLAGS) $(INCLUDES) -o $(EXEC) $(OBJECTS) $(LPATHS)
 
 # Here we use Suffix Replacement to building our object files
 # we use automatic variables $<: the name of the prerequisite of 
@@ -44,6 +51,7 @@ $(EXEC): $(OBJECTS)
 
 .cpp.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+#	$(CC) $(CFLAGS) $(INCLUDES) $(LPATHS) -c $< -o $@
 
 clean:
 	$(RM) *.o *~ $(EXEC)
