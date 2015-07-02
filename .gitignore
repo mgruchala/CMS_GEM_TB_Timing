@@ -15,6 +15,7 @@
 # ROOT Files #
 ##############
 *.root
+TestBeamDataset_*.root
 data/
 data/*
 
