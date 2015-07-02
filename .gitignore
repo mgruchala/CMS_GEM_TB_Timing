@@ -5,8 +5,8 @@
 # Compiled source #
 ###################
 *.o
-analyzeTree
-produceTree
+*analyzeTree
+*produceTree
 
 # ROOT Files #
 ##############
