@@ -1,3 +1,7 @@
+# Text Files #
+##############
+*PFP.txt
+
 # Compiled source #
 ###################
 *.o
@@ -6,3 +10,7 @@ analyzeTree
 # Back-Up Files #
 #################
 *~
+
+# ROOT Files #
+##############
+*.root
