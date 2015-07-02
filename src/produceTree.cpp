@@ -8,15 +8,14 @@
 
 //C++ Includes
 #include <algorithm>
+#include <fstream>
 #include <iostream>
 //#include <ifstream>
 //#include <ofstream>
-#include <fstream>
 #include <stdio.h>
 #include <string>
-#include <vector>
 #include <utility>
-
+#include <vector>
 //ROOT Includes
 
 //My Includes
@@ -411,7 +410,7 @@ int main( int argc_, char * argv_[]){
         //Skip Commented Lines
         if (strLine.compare(0,1,"#") == 0) continue;
         
-	cout<<"strLine=" << strLine << endl;
+        cout<<"strLine=" << strLine << endl;
 
         //Check for start of Data header
         if (strLine.compare("[BEGIN_IGNORED_IDENTIFIERS]") == 0) { //Case: Ignored Identifiers Header Started
@@ -435,7 +434,7 @@ int main( int argc_, char * argv_[]){
                 } //End Case: Section Ended
                 
                 //Store ignored parameter
-		cout<<"ignoring " << strLine << endl;
+                cout<<"ignoring " << strLine << endl;
                 myProducer.setIgnoredParameter(strLine);    pInfo.vec_strIgnoredIdent.push_back(strLine);
             } //End Loop through ignored identifiers
         } //End Case: Ignored Identifiers Header Started
@@ -446,7 +445,7 @@ int main( int argc_, char * argv_[]){
     }
     
     file_Config.close();
-                   
+    
     //Ignored Parameter List (All)
     /*myProducer.setIgnoredParameter("TDC.ROOT");
     myProducer.setIgnoredParameter("Trial01");
