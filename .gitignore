@@ -1,16 +1,20 @@
-# Text Files #
-##############
-*PFP.txt
+# Back-Up Files #
+#################
+*~
 
 # Compiled source #
 ###################
 *.o
 analyzeTree
-
-# Back-Up Files #
-#################
-*~
+produceTree
 
 # ROOT Files #
 ##############
 *.root
+data/
+data/*
+
+# Text Files #
+##############
+*PFP.txt
+setup_files/Production_ConfigFile.txt

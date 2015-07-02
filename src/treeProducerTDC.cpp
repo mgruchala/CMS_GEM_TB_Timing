@@ -451,6 +451,7 @@ vector<quad<std::string, vector<std::string>, treeProducerTDC::dataType_t, int> 
             } //End Case: Data Type - float
             else if (strDataType.compare("INT") == 0 ) {
                 //mappedParam.mapDataInt[parsedLine[0]] = std::make_pair( std::stoi(parsedLine[2]), std::stoi(parsedLine[3]) );
+                if(verbose_LUT) cout<<"treeProducerTDC::getLookUpTable() - stoi converstion on " << vec_strLUTIdents[0] << endl;
                 runLogger.setParameter( std::stoi(vec_strLUTIdents[0]), iMthdIdx );
             } //End Case: Data Type - int
             else if (strDataType.compare("STRING") == 0 ) { //Case: Data Type - string
@@ -802,6 +803,7 @@ void treeProducerTDC::setParsedLUTLine(string &inputLine, vector<string> &vec_st
     strTreeName     = inputLine.substr(0,iPos_Paren1);
     strDataType     = inputLine.substr(iPos_Paren1+1,iPos_Paren2 - iPos_Paren1 - 1);
     
+    if(verbose_LUT) cout<<"treeProducerTDC::getParsedLUTLine() - stoi converstion on " << inputLine.substr(iPos_Colon+1,iPos_End - iPos_Colon - 1 ) << endl;
     iMthdIdx        = std::stoi( inputLine.substr(iPos_Colon+1,iPos_End - iPos_Colon - 1 ) );
     
     //Find Positions of All commas
@@ -944,6 +946,7 @@ void treeProducerTDC::setMappedParam(string &parsedInput, quad<string,vector<str
             //Debugging
             //cout<<"Identifier(int) = " << lutItem.first << endl;
             //cout<<"parsedInput = " << parsedInput << endl;
+            if (verbose_LUT) cout<<"treeProducerTDC::setMappedParam() - stoi conversion on " << parsedInput << endl;
             runLogger.setParameter( std::stoi(parsedInput), lutItem.fourth );
             break;
         case typeString:

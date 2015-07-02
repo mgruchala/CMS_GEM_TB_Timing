@@ -9,12 +9,13 @@
 //C++ Includes
 #include <algorithm>
 #include <iostream>
-#include <ifstream>
-#include <ofstream>
-#include <pair>
+//#include <ifstream>
+//#include <ofstream>
+#include <fstream>
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <utility>
 
 //ROOT Includes
 
@@ -24,10 +25,10 @@
 using std::cout;
 
 struct ProdInfo{
-    bool bVerboseMode_IO
-    bool bVerboseMode_PFN
-    bool bVerboseMode_LUT
-    bool bVerboseMode_PrintRuns
+    bool bVerboseMode_IO;
+    bool bVerboseMode_PFN;
+    bool bVerboseMode_LUT;
+    bool bVerboseMode_PrintRuns;
     
     std::string strFitOption;
     
@@ -126,6 +127,9 @@ std::pair<string,string> getParsedLine(string strInputLine, bool &bExitSuccess){
     //Set the Exit Flag
     bExitSuccess = true;
     
+    //cout<<"getParsedLine() - strFieldName = " << strFieldName << endl;
+    //cout<<"getParsedLine() - strFieldValue = " << strFieldValue << endl;
+
     //Return the Pair
     return std::make_pair(strFieldName,strFieldValue);
 } //End getParsedLine()
@@ -165,11 +169,17 @@ void printStreamStatus(ifstream &inputStream){
 
 //Gets Production Info from input config file
 void getProdInfo(ifstream &file_Input, ProdInfo &pInfo, bool bVerboseMode){
-    
+    //Variable Declaration
+    bool bInfoHeaderEnd = false;
+
+    std::pair<string,string> pair_Param;
+
+    std::string strLine = "";
+
     //Loop Through Data File
     //Check for faults immediately afterward
     //------------------------------------------------------
-    while ( getlineNoSpaces(file_Input, strLine) ) { //Loop Over Input File
+    while ( getlineNoSpaces(file_Input, strLine) /* && !bInfoHeaderEnd */) { //Loop Over Input File
         //Skip Commented Lines
         if (strLine.compare(0,1,"#") == 0) continue;
         
@@ -177,7 +187,7 @@ void getProdInfo(ifstream &file_Input, ProdInfo &pInfo, bool bVerboseMode){
         if (strLine.compare("[BEGIN_PROD_INFO]") == 0 ) { //Case: Info Header Found!
             cout<<"getProInfo(): Info header found!\n";
             
-            while (getline(file_Input, strLine) ) { //Loop Through Info Header
+            while (getlineNoSpaces(file_Input, strLine) ) { //Loop Through Info Header
                 bool bExitSuccess;
                 
                 //Skip Commented Lines
@@ -196,6 +206,7 @@ void getProdInfo(ifstream &file_Input, ProdInfo &pInfo, bool bVerboseMode){
                         //cout<<  "\t Ambient T = " << pInfo.strTemp << endl;
                     } //End Case: User Requested Verbose Input/Output
                     
+		    bInfoHeaderEnd = true;
                     break;
                 } //End Case: End of Info Header
                 
@@ -208,21 +219,25 @@ void getProdInfo(ifstream &file_Input, ProdInfo &pInfo, bool bVerboseMode){
                     else if( pair_Param.first.compare("PFN_RunList") == 0 ){        pInfo.strPFN_RunList         = pair_Param.second;}
                     else if( pair_Param.first.compare("OutputRootFileName") == 0 ) {  pInfo.strOutput_ROOTFile        = pair_Param.second;}
                     else if( pair_Param.first.compare("OutputTreeName") == 0 ){   pInfo.strOutput_Tree    = pair_Param.second;}
-                    else if( pair_Param.first.compare("VerboseMode_IO") == 0 ){     pInfo.bVerboseMode_IO      = convert2bool(pair_Param.second);}
-                    else if( pair_Param.first.compare("VerboseMode_LUT") == 0 ){ pInfo.bVerboseMode_LUT      = convert2bool(pair_Param.second);}
-                    else if( pair_Param.first.compare("VerboseMode_Parsing") == 0 ){pInfo.bVerboseMode_PFN        = convert2bool(pair_Param.second);}
-                    else if( pair_Param.first.compare("VerboseMode_PrintRuns") == 0 ){pInfo.bVerboseMode_PrintRuns        = convert2bool(pair_Param.second);}
+                    else if( pair_Param.first.compare("VerboseMode_IO") == 0 ){     pInfo.bVerboseMode_IO      = convert2bool(pair_Param.second, bExitSuccess);}
+                    else if( pair_Param.first.compare("VerboseMode_LUT") == 0 ){ pInfo.bVerboseMode_LUT      = convert2bool(pair_Param.second, bExitSuccess);}
+                    else if( pair_Param.first.compare("VerboseMode_Parsing") == 0 ){pInfo.bVerboseMode_PFN        = convert2bool(pair_Param.second, bExitSuccess);}
+                    else if( pair_Param.first.compare("VerboseMode_PrintRuns") == 0 ){pInfo.bVerboseMode_PrintRuns        = convert2bool(pair_Param.second, bExitSuccess);}
                     else{ //Case: Input Not Recognized
                         cout<<"getProInfo() - Unrecognized field!!!\n";
                         cout<<("getProInfo() - " + pair_Param.first + " = " + pair_Param.second ).c_str() << endl;
-                        cout<<"getProInfo() - Please cross-check input file:" << strInputFileName << endl;
+                        //cout<<"getProInfo() - Please cross-check input file:" << strInputFileName << endl;
+			cout<<"getProInfo() - Please cross-check config file\n";
                     } //End Case: Input Not Recognized
                 } //End Case: Parameter Fetched Successfully
             } //End Loop Through Info Header
         } //End Case: Info Header Found!
+
+	if (bInfoHeaderEnd) break;
     } //End Loop Over Input File
     if ( file_Input.bad() && bVerboseMode) {
-        perror( ("getProInfo(): error while reading file: " + strInputFileName).c_str() );
+        //perror( ("getProInfo(): error while reading file: " + strInputFileName).c_str() );
+        perror( "getProInfo(): error while reading config file" );
         printStreamStatus(file_Input);
     }
     
@@ -241,7 +256,7 @@ int main( int argc_, char * argv_[]){
     
     ifstream file_Config;
     
-    ProtInfo pInfo;
+    ProdInfo pInfo;
     
     std::string strInputConfigFile; //Input Config File
     std::string strLine; //Line from a file
@@ -263,7 +278,9 @@ int main( int argc_, char * argv_[]){
         std::cout<<"For help menu:\n";
         std::cout<<"\t./produceTree -h\n";
         std::cout<<"For CMS GEM test beam production:\n";
-        std::cout<<"\t./produceTree <Input_Config_File>";
+        std::cout<<"\t./produceTree <Input_Config_File> <Verbose Mode true/false>\n";
+
+	return 1;
     } //End Case: Usage
     else if (vec_strInputArgs.size() == 2 && vec_strInputArgs[1].compare("-h") == 0) { //Case: Help Menu
         std::cout<<"produceTree v"<<fVersion<<endl;
@@ -339,6 +356,10 @@ int main( int argc_, char * argv_[]){
         return -3;
     } //End Case: Input Not Understood
     
+    //Get the Production Info
+    //------------------------------------------------------
+    getProdInfo(file_Config, pInfo, bVerboseMode);
+
     //Create new run list file with filepath of files inserted
     //------------------------------------------------------
     //Open the run list file
@@ -364,11 +385,15 @@ int main( int argc_, char * argv_[]){
         pInfo.strPFN_RunList_PFP = "RunList_PFP.txt";
     }
     
-    ofstream file_RunList_PFP(pInfo.strPFN_RunList_PFP.c_str(), std::ios_base::app);
+    //std::ofstream file_RunList_PFP(pInfo.strPFN_RunList_PFP.c_str(), std::ios_base::app);
+    std::ofstream file_RunList_PFP( pInfo.strPFN_RunList_PFP.c_str() );
     
     //Loop through Run List file, check for faults immediately afterward
     while ( getline(file_RunList, strLine ) ) { //Loop through file_RunList
-        file_RunList_PFP<<(pInfo.strPFP_RawData + "/" + strLine ).c_str();
+	//Skip Commented Lines
+        if (strLine.compare(0,1,"#") == 0) continue;
+        
+        file_RunList_PFP<<(pInfo.strPFP_RawData + "/" + strLine ).c_str()<<endl;
     } //End Loop through file_RunList
     if ( file_RunList.bad() && bVerboseMode) {
         perror( ("main(): error while reading file: " + pInfo.strPFN_RunList).c_str() );
@@ -380,10 +405,14 @@ int main( int argc_, char * argv_[]){
     //Create the Ignored Identifier List
     //------------------------------------------------------
     //Loop through config file, check for faults immediately afterward
+    cout<<"Ignored parameter stream status"<<endl;
+    printStreamStatus(file_Config);
     while (getlineNoSpaces(file_Config, strLine) ) { //Loop Over file_Config
         //Skip Commented Lines
         if (strLine.compare(0,1,"#") == 0) continue;
         
+	cout<<"strLine=" << strLine << endl;
+
         //Check for start of Data header
         if (strLine.compare("[BEGIN_IGNORED_IDENTIFIERS]") == 0) { //Case: Ignored Identifiers Header Started
             cout<<"main(): ignored identifiers header found!\n";
@@ -406,6 +435,7 @@ int main( int argc_, char * argv_[]){
                 } //End Case: Section Ended
                 
                 //Store ignored parameter
+		cout<<"ignoring " << strLine << endl;
                 myProducer.setIgnoredParameter(strLine);    pInfo.vec_strIgnoredIdent.push_back(strLine);
             } //End Loop through ignored identifiers
         } //End Case: Ignored Identifiers Header Started
@@ -415,7 +445,7 @@ int main( int argc_, char * argv_[]){
         printStreamStatus(file_Config);
     }
     
-    file_Config.close()
+    file_Config.close();
                    
     //Ignored Parameter List (All)
     /*myProducer.setIgnoredParameter("TDC.ROOT");
