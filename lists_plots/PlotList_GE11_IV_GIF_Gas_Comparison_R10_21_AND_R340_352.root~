@@ -1,0 +1,82 @@
+#If you see an error message like:
+#	Error in <TTreeFormula::Compile>:  Invalid Syntax "&&"
+#Or similiar most likely your "selection" field in the selection header is empty and you have applied a local selection
+#program interupts this as ' && <local selection>' which causes a syntax error (b/c you are taking the AND of a null expression and a local expression)
+#consider revising.
+[BEGIN_SELECTION]
+	identifier = 'Comp_GE11_IV_GIF_Gas_Comparison';
+	selection = 'fTDC_Histo_RMS > -1 && fDet_Gain > 100';
+	clone_prev = 'false';
+	[BEGIN_CANVAS]
+		name='timeResp';
+		title='Gas Comparison';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		log_x='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='GE1/1-IV-GIF';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.82';
+		latex_line='#left(i#eta, i#phi#right) = #left(5, 2#right)';
+		#latex_line='i#phi = 2';
+		latex_line_ndcpos_x='0.53';
+		latex_line_ndcpos_y='0.78';
+		leg_ndcpos_x1='0.15';
+		leg_ndcpos_x2='0.30';
+		leg_ndcpos_y1='0.45';
+		leg_ndcpos_y2='0.15';
+		[BEGIN_PLOT]
+			name='10_21';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF_HVSWAP_UGAIN.root';
+			name_tree='GE11_IV';
+			selection='10 <= iRun && iRun <= 21';			
+			#var_indep='fDet_Imon';			
+			var_indep='fDet_Gain';			
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			var_dep_assoc='func_TDC_Convo';
+			#x_title='I_{mon} #left(#muA#right)';
+			x_title='Effective Gain';			
+			y_title='Time Response #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kRed';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			leg_entry = '10 #leq iRun #leq 21; Ar/CO_{2}';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='340_352';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF_HVSWAP_UGAIN.root';
+			name_tree='GE11_IV';
+			selection='340 <= iRun && iRun <= 352 && iRun != 344';			
+			#var_indep='fDet_Imon';
+			#var_indep='fDet_VDrift';			
+			var_indep='fDet_Gain';			
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			var_dep_assoc='func_TDC_Convo';
+			#x_title='I_{mon} #left(#muA#right)';
+			x_title='Effective Gain';			
+			y_title='Time Response #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='kBlue';
+			style_line='1';
+			style_marker='23';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = '340 #leq iRun #leq 352 ; Ar/CO_{2}/CF_{4}';
+		[END_PLOT]
+	[END_CANVAS]
+[END_SELECTION]
