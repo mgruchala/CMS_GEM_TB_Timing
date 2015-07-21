@@ -31,7 +31,8 @@
 #
 #---------------------------------------------------------------
 [DET]
-DET_POS(int)=1:101;
+#DET_POS(int)=1:101;
+DET_POS(int)=0:101;
 DET_NAME(string)=GE1/1-IV-GIF:106;
 TDC_CH_NUMBER(int)=10:301;
 #---------------------------------------------------------------
@@ -59,10 +60,10 @@ DET_PHI(int)=2:103;
 DET_GASFRAC_AR(float)=45:107;
 DET_GASFRAC_CO2(float)=15:108;
 DET_GASFRAC_CF4(float)=40:109;
-DET_GAIN_CONST(float)=-1.248626e+01:110;
-DET_GAIN_CONST_ERR(float)=1.190618e-01:111;
-DET_GAIN_SLOPE(float)=2.678824e-02:112;
-DET_GAIN_SLOPE_ERR(float)=2.034478e-04:113;
+DET_GAIN_CONST(float)=-12.4746:110;
+DET_GAIN_CONST_ERR(float)=0.120585:111;
+DET_GAIN_SLOPE(float)= 0.0267705:112;
+DET_GAIN_SLOPE_ERR(float)= 0.000206051:113;
 DET_GAIN_INDEPVAR_CURRENT(bool)=true:114;
 #---------------------------------------------------------------
 [END]
