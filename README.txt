@@ -17,15 +17,19 @@
 
 		cd ../src/
 
+	Open makefile_analyzer, ensure the compiler is correct for your system
+
+		i.e. CC = g++ or clang (for Mac OS > 10.9 ???)
+
+	Perform the same check for makefile_producer
+
 	Build the project:
 
 		make -f makefile_analyzer	#(Tree Analyzer)
 		make -f makefile_producer	#(Tree Producer, experts only)
 
 	This will create two executables "analyzeTree" and "produceTree"
-	The first is for analyzing the "TestBeamDataset_TDC_Fall2014_GE11_*.root" files included in this repository
-	The second is for creating these files (experts only)
-
+	
 # Usage - analyzeTree
 # ========================================================
 

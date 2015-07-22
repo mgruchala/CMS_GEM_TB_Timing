@@ -1,0 +1,13 @@
+*****************************************
+*					*
+*	CHANGELOG: CMS_GEM_TB_Timing	*
+*	VERSION: 2.1			*
+*	LAST UPDATE: July 22 2015	*
+*					*
+*****************************************
+
+Update: July 22nd 2015
+=========================================
+->Added CHANGELOG.txt to project
+->Updated README.txt to provide instructions for changing compiler on Mac OS X
+->Cross-checking pull request by Abdulla for HV cable swap and updated gain calibration numbers
