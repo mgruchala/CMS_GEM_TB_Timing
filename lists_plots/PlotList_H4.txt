@@ -28,7 +28,7 @@
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='GE11IVGIF_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='fTDC_Fit_ContConvo_Sigma > 0 && iRun != 344';
 			#var_indep='fDet_Imon';
@@ -55,7 +55,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IVGIF_GausSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='fTDC_Fit_Sigma > 0 && iRun != 344';
 			#var_indep='fDet_Imon';
@@ -81,7 +81,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IVGIF_NumDeconvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='fTDC_NumDeconvo_TimeResp > 0 && iRun != 344';
 			#var_indep='fDet_Imon';
@@ -106,7 +106,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IVGIF_HistoRMS_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='fTDC_Histo_RMS > 0 && iRun != 344';
 			#var_indep='fDet_Imon';
@@ -150,7 +150,7 @@
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='GE11IVGIF_FitNormChi2_ContConvo_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='iRun != 344';
 			#var_indep='fDet_Imon';
@@ -173,7 +173,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IVGIF_FitNormChi2_Gaus_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='iRun != 344';
 			#var_indep='fDet_Imon';
@@ -231,7 +231,7 @@
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='GE11IVGIF_iEta1_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='1175 <= iRun && iRun <= 1205 && fTDC_Fit_ContConvo_Sigma > 0';
 			#var_indep='fDet_Imon';
@@ -257,7 +257,7 @@
 		[END_PLOT]		
 		[BEGIN_PLOT]
 			name='GE11IVGIF_iEta5_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='340 <= iRun && iRun <= 347 && fTDC_Fit_ContConvo_Sigma > 0 && iRun != 344';
 			#var_indep='fDet_Imon';
@@ -283,7 +283,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IVGIF_iEta8_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='1486 <= iRun && iRun <= 1535 && fTDC_Fit_ContConvo_Sigma > 0';
 			#var_indep='fDet_Imon';
@@ -333,7 +333,7 @@
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='GE11IV_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='fTDC_Fit_ContConvo_Sigma > 0 && iRun != 344';
 			#selection='fTDC_Fit_ContConvo_Sigma > 0';
@@ -361,7 +361,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IV_GausSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='fTDC_Fit_Sigma > 0 && iRun != 344';
 			#selection='fTDC_Fit_Sigma > 0';
@@ -388,7 +388,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IV_NumDeconvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='fTDC_NumDeconvo_TimeResp > 0 && iRun != 344';
 			#selection='fTDC_NumDeconvo_TimeResp > 0';
@@ -414,7 +414,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IV_HistoRMS_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='fTDC_Histo_RMS > 0 && iRun != 344';
 			#selection='fTDC_Histo_RMS > 0';
@@ -459,7 +459,7 @@
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='GE11IV_FitNormChi2_ContConvo_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='iRun != 344';
 			#var_indep='fDet_Imon';
@@ -482,7 +482,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IV_FitNormChi2_Gaus_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='iRun != 344';
 			#var_indep='fDet_Imon';
@@ -539,7 +539,7 @@
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='GE11IV_iEta1_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='1174 <= iRun && iRun <= 1204 && fTDC_Fit_ContConvo_Sigma > 0';
 			#var_indep='fDet_Imon';
@@ -565,7 +565,7 @@
 		[END_PLOT]		
 		[BEGIN_PLOT]
 			name='GE11IV_iEta5_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='340 <= iRun && iRun <= 349 && fTDC_Fit_ContConvo_Sigma > 0 && iRun != 344';
 			#var_indep='fDet_Imon';
@@ -591,7 +591,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IV_iEta8_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='1485 <= iRun && iRun <= 1531 && fTDC_Fit_ContConvo_Sigma > 0';
 			#var_indep='fDet_Imon';
@@ -642,7 +642,7 @@
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='GE11IV_iEta1_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='1174 <= iRun && iRun <= 1204 && fTDC_Fit_ContConvo_Sigma > 0';
 			#var_indep='fDet_Imon';			
@@ -666,7 +666,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IVGIF_iEta1_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='1175 <= iRun && iRun <= 1205 && fTDC_Fit_ContConvo_Sigma > 0';
 			#var_indep='fDet_Imon';
@@ -710,7 +710,7 @@
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='GE11IV_iEta5_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='340 <= iRun && iRun <= 349 && fTDC_Fit_ContConvo_Sigma > 0 && iRun != 344';
 			#var_indep='fDet_Imon';
@@ -736,7 +736,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IVGIF_iEta5_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='340 <= iRun && iRun <= 347 && fTDC_Fit_ContConvo_Sigma > 0 && iRun != 344';
 			#var_indep='fDet_Imon';
@@ -782,7 +782,7 @@
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='GE11IV_iEta8_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV.root';
 			name_tree='GE11_IV';
 			selection='1485 <= iRun && iRun <= 1531 && fTDC_Fit_ContConvo_Sigma > 0';
 			#var_indep='fDet_Imon';
@@ -808,7 +808,7 @@
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='GE11IVGIF_iEta8_ContConvoSigma_v_Imon';
-			name_root_file='TestBeamDataset_TDC_Fall2014_H4_GE11_IV_GIF.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF.root';
 			name_tree='GE11_IV_GIF';
 			selection='1486 <= iRun && iRun <= 1535 && fTDC_Fit_ContConvo_Sigma > 0';
 			#var_indep='fDet_Imon';

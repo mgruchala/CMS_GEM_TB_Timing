@@ -55,8 +55,4 @@
 	
 	EXPERTS ONLY
 
-	Call:
-
-		./src/produceTree -h
-
-	More coming soon...
+	Coming soon...
