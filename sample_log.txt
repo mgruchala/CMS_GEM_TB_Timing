@@ -1,0 +1,28 @@
+getProInfo(): Info header found!
+Ignored parameter stream status
+Input File Stream Bit Status:
+ good()=1
+ eof()=0
+ fail()=0
+ bad()=0
+strLine=[BEGIN_IGNORED_IDENTIFIERS]
+main(): ignored identifiers header found!
+ignoring Trial01
+ignoring TDC.ROOT
+ignoring Lat24
+ignoring Lat26
+ignoring Lat27
+ignoring Lat30
+ignoring Lat31
+ignoring Ch10
+ignoring Ch10GE2.root
+ignoring VFAT0.root
+ignoring VFAT2.root
+ignoring VFAT3.root
+ignoring ORVFAT3.root
+ignoring ANDVFAT0VFAT3.root
+ignoring ANDVFAT0VFAT2.root
+ignoring WithFuncGen
+ignoring Optimal
+ignoring values
+Run Beam Mode DLY | iEta iPhi Imon VDrift Gain f_Ar f_CO f_CF4 | IPreAmpI IPreAmpF IPreAmpO IShaper IShaperFeed IComp MSPL Lat Thresh | Sigma_Histo Sigma_Gaus Sigma_Cont Sigma_Num | Pk1_Pos Pk1_Int Pk2_Pos Pk2_Int Pk3_Pos Pk3_Int

@@ -1,0 +1,141 @@
+#If you see an error message like:
+#	Error in <TTreeFormula::Compile>:  Invalid Syntax "&&"
+#Or similiar most likely your "selection" field in the selection header is empty and you have applied a local selection
+#program interupts this as ' && <local selection>' which causes a syntax error (b/c you are taking the AND of a null expression and a local expression)
+#consider revising.
+[BEGIN_SELECTION]
+	identifier = 'Comp_GE11_IV_Gas_Comparison';
+	selection = 'fTDC_Histo_RMS > -1 && fDet_Gain > 100';
+	clone_prev = 'false';
+	[BEGIN_CANVAS]
+		name='timeResp';
+		title='Gas Comparison';
+		width='700';
+		height='700';
+		grid_x='false';
+		grid_y='true';
+		log_x='true';
+		latex_line='CMS Preliminary';
+		latex_line_ndcpos_x='0.1';
+		latex_line_ndcpos_y='0.907';
+		latex_line='Generation: GE1/1-IV';
+		latex_line_ndcpos_x='0.62';
+		latex_line_ndcpos_y='0.907';
+		latex_line='#scale[0.8]{#color[2]{#left(i#eta, i#phi#right) = #left(5, 2#right)}, Ar/CO_{2}} ';
+		#latex_line='i#phi = 2';
+		latex_line_ndcpos_x='0.62';
+		latex_line_ndcpos_y='0.88';
+		latex_line='#scale[0.8]{#color[1]{#left(i#eta, i#phi#right) = #left(1, 2#right)}, Ar/CO_{2}/CF_{4}}';
+		latex_line_ndcpos_x='0.62';
+		latex_line_ndcpos_y='0.85';
+		latex_line='#scale[0.8]{#color[8]{#left(i#eta, i#phi#right) = #left(5, 2#right)}, Ar/CO_{2}/CF_{4}}';
+		latex_line_ndcpos_x='0.62';
+		latex_line_ndcpos_y='0.82';
+		latex_line='#scale[0.8]{#color[4]{#left(i#eta, i#phi#right) = #left(8, 2#right)}, Ar/CO_{2}/CF_{4}}';
+		latex_line_ndcpos_x='0.62';
+		latex_line_ndcpos_y='0.79';
+		leg_ndcpos_x1='0.12';
+		leg_ndcpos_x2='0.35';
+		leg_ndcpos_y1='0.24';
+		leg_ndcpos_y2='0.12';
+		[BEGIN_PLOT]
+			name='H2_5_2_Ar/CO2_R185-R201';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_GIF_UGAIN.root';
+			name_tree='GE11_IV_GIF';
+			selection='185 <= iRun && iRun <= 201';			
+			#var_indep='fDet_Imon';			
+			var_indep='fDet_Gain';			
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			var_dep_assoc='func_TDC_Convo';
+			#x_title='I_{mon} #left(#muA#right)';
+			x_title='Effective Gain';			
+			y_title='Time Response #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='2';
+			style_line='1';
+			style_marker='3';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='AP';
+			leg_entry = '#scale[0.9]{185 #leq iRun #leq 201}';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='H4_5_2_Ar/CO2/CF4_R340_R352';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_UGAIN.root';
+			name_tree='GE11_IV';
+			selection='340 <= iRun && iRun <= 352 && iRun != 344';			
+			#var_indep='fDet_Imon';
+			#var_indep='fDet_VDrift';			
+			var_indep='fDet_Gain';			
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			var_dep_assoc='func_TDC_Convo';
+			#x_title='I_{mon} #left(#muA#right)';
+			x_title='Effective Gain';			
+			y_title='Time Response #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='8';
+			style_line='1';
+			style_marker='21';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = '#scale[0.9]{340 #leq iRun #leq 352}';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='H4_1_2_Ar/CO2/CF4_R1174_R1204';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_UGAIN.root';
+			name_tree='GE11_IV';
+			selection='1174 <= iRun && iRun <= 1204';			
+			#var_indep='fDet_Imon';
+			#var_indep='fDet_VDrift';			
+			var_indep='fDet_Gain';			
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			var_dep_assoc='func_TDC_Convo';
+			#x_title='I_{mon} #left(#muA#right)';
+			x_title='Effective Gain';			
+			y_title='Time Response #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='1';
+			style_line='1';
+			style_marker='22';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = '#scale[0.9]{1174 #leq iRun #leq 1204}';
+		[END_PLOT]
+		[BEGIN_PLOT]
+			name='H4_8_2_Ar/CO2/CF4_R1485_R1536';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_UGAIN.root';
+			name_tree='GE11_IV';
+			selection='1485 <= iRun && iRun <= 1536';			
+			#var_indep='fDet_Imon';
+			#var_indep='fDet_VDrift';			
+			var_indep='fDet_Gain';			
+			#var_indep_err='';
+			var_dep='fTDC_Fit_ContConvo_Sigma';
+			var_dep_err='fTDC_Fit_ContConvo_Sigma_Err';
+			var_dep_assoc='func_TDC_Convo';
+			#x_title='I_{mon} #left(#muA#right)';
+			x_title='Effective Gain';			
+			y_title='Time Response #left(ns#right)';
+			y_range_min='0';
+			y_range_max='30';
+			color='4';
+			style_line='1';
+			style_marker='20';
+			size_line='2';
+			size_marker='0.9';
+			option_draw='P';
+			leg_entry = '#scale[0.9]{1485 #leq iRun #leq 1536}';
+		[END_PLOT]
+	[END_CANVAS]
+[END_SELECTION]

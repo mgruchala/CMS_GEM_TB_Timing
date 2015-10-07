@@ -26,12 +26,12 @@
 		latex_line_ndcpos_x='0.53';
 		latex_line_ndcpos_y='0.78';
 		leg_ndcpos_x1='0.15';
-		leg_ndcpos_x2='0.30';
-		leg_ndcpos_y1='0.45';
+		leg_ndcpos_x2='0.45';
+		leg_ndcpos_y1='0.30';
 		leg_ndcpos_y2='0.15';
 		[BEGIN_PLOT]
 			name='10_21';
-			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_HVSWAP_UGAIN.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_UGAIN.root';
 			name_tree='GE11_IV';
 			selection='10 <= iRun && iRun <= 21';			
 			#var_indep='fDet_Imon';			
@@ -50,12 +50,12 @@
 			style_marker='21';
 			size_line='2';
 			size_marker='0.9';
-			option_draw='AP';
+			option_draw='APL';
 			leg_entry = '10 #leq iRun #leq 21; Ar/CO_{2}';
 		[END_PLOT]
 		[BEGIN_PLOT]
 			name='340_352';
-			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_HVSWAP_UGAIN.root';
+			name_root_file='TestBeamDataset_TDC_Fall2014_GE11_IV_UGAIN.root';
 			name_tree='GE11_IV';
 			selection='340 <= iRun && iRun <= 352 && iRun != 344';			
 			#var_indep='fDet_Imon';
@@ -75,7 +75,7 @@
 			style_marker='23';
 			size_line='2';
 			size_marker='0.9';
-			option_draw='P';
+			option_draw='PL';
 			leg_entry = '340 #leq iRun #leq 352 ; Ar/CO_{2}/CF_{4}';
 		[END_PLOT]
 	[END_CANVAS]
